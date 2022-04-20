@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+          body{
+            font-size: 20px;
+           margin-top: 9%;
+            border-radius: 5px black;
+            }
+        </style>
+        <style type="text/css">
+            input[type="submit"]{
+                cursor: pointer;
+            }
+        </style>
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+    <h1 style="text-align: center; color: whitesmoke;" padding="5px" >register</h1>
+    <ul>
+        <% if (typeof errors != 'undefined') { %> <% errors.forEach(error => { %>
+        <li><%= error.message %></li>
+        <% }) %> <% } %>
+      </ul>
+    <form action="/users/register" method="POST">
+        
+        <table style="color: black;" align="center" cellspacing="10p;">
+    
+        <tr style="color: whitesmoke;">
+            <td>
+                first_name
+            </td>
+            <td> <input type="text" id="first_name"  name="first_name" placeholder="enter name" minlength="4" maxlength="20"></td>
+        </tr>
+        <tr style="color: whitesmoke;">
+            <td>
+                last_name
+            </td>
+            <td> <input type="text" id="last_name" name="last_name" placeholder="enter name" minlength="4" maxlength="10"></td>
+        </tr>
+        <tr style="color: whitesmoke;">
+            <td>email</td>
+            <td><input type="email"  name="email"  id="email" placeholder="enter mail"></td>
+        </tr>
+        <tr style="color: whitesmoke;">
+            <td>Gender</td>
+            <td>
+                <input type="radio" name="gender" value="male">MALE
+                <input type="radio" name="gender" value="female">FEMALE
+                            </td>
+            </tr>
+            <tr style="color: whitesmoke;">
+                <td>
+                <label >dob </label>
+                <td>
+                <input type="date"  id="dob" name="dob"></input></td>
+                </td></tr>
+                <tr style="color: whitesmoke;">
+                    <td>age</td>
+                    <td ><input type="number" id="age" name="age" placeholder="enter age" min="6" max="50"> </td>
+                </tr>
+        <tr style="color: whitesmoke;">
+            <td>
+                phoneno
+            </td>
+            <td>
+                <select>
+                    <option selected>91+</option>
+                    <option>92+</option>
+                    <option>93+</option>
+                    <option>94+</option>
+                   
+                </select>
+                <input type="number" name="phoneno" id="phoneno" maxlength="10">
+            </td>
+        </tr>
+            <tr style="color: whitesmoke;">
+                <td>
+             COUNTRY
+            </td>
+                 <td>
+                    <select id="country" name="country">
+                        <option >INDIA</option>
+                        <option>USA</option>
+                        <option>UK</option>
+            </select>
+            </td>
+            </tr>
+                 
+        <tr style="color: whitesmoke;">
+            <td>
+                Password
+            </td>
+            <td>
+                <input type="password" id="password" name="password" placeholder="enter password">
+            </td>
+        </tr>
+        <tr style="color: whitesmoke;">
+            <td>
+                conform_pass
+            </td>
+            <td>
+                <input type="password" id="conform_pass" name="conform_pass" placeholder="enter password">
+            </td>
+        </tr>
+        
+            <tr style="color: whitesmoke;"> 
+                <td>
+                            <input type="radio" id="i agree" name="signin" value="I AGREE TO THE TRERMS">
+                            <label for="i agree">I AGREE TO THE TERMS</label>
+                </td>
+            </tr>
+        </table>
+        <center>
+         <a href="/users/login" style="color: whitesmoke;"> ALREADY A USER LOGIN IN</a>
+            <br>
+            <input style="background-color: yellow;" type="submit" value="register"></input>
+            </center>         
+ </form>
+</body>
+</html>
